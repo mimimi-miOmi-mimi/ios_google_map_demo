@@ -10,11 +10,10 @@ struct MapView: UIViewRepresentable {
         }
 
         func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            let userLocation = locations.last
-            guard let latitude = userLocation?.coordinate.latitude, let longitude = userLocation?.coordinate.longitude else { return }
+            guard let userLocation = locations.last else { return }
             let camera = GMSCameraPosition.camera(
-                withLatitude: latitude,
-                longitude: longitude,
+                withLatitude: userLocation.coordinate.latitude,
+                longitude: userLocation.coordinate.longitude,
                 zoom: 15.0
             )
             parent.mapView.animate(to: camera)
@@ -32,7 +31,6 @@ struct MapView: UIViewRepresentable {
     func makeUIView(context: Context) -> some UIView {
         mapView.isMyLocationEnabled = true
         locationManager.delegate = context.coordinator
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
