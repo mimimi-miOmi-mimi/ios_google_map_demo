@@ -109,8 +109,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 163F349D281FBE3D00AE2125 /* Build configuration list for PBXNativeTarget "GoogleMapDemo" */;
 			buildPhases = (
-				162ED450282129AA0091AA10 /* ShellScript */,
 				8300C8FC5393017D9A4DB8B8 /* [CP] Check Pods Manifest.lock */,
+				162ED450282129AA0091AA10 /* ShellScript */,
 				163F348B281FBE3B00AE2125 /* Sources */,
 				163F348C281FBE3B00AE2125 /* Frameworks */,
 				163F348D281FBE3B00AE2125 /* Resources */,

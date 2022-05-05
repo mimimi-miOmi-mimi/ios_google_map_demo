@@ -23,12 +23,13 @@ struct MapView: UIViewRepresentable {
 
     let mapView = GMSMapView(frame: .zero)
     @State var locationManager = CLLocationManager()
+    @Binding var zoomValue: Float
 
     func makeCoordinator() ->Coordinator {
         return Coordinator(mapView: self)
     }
 
-    func makeUIView(context: Context) -> some UIView {
+    func makeUIView(context: Context) -> GMSMapView {
         mapView.isMyLocationEnabled = true
         locationManager.delegate = context.coordinator
         locationManager.requestWhenInUseAuthorization()
@@ -37,12 +38,7 @@ struct MapView: UIViewRepresentable {
         return mapView
     }
 
-    func updateUIView(_ uiView: UIViewType, context: Context) {
-    }
-}
-
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView()
+    func updateUIView(_ mapView: GMSMapView, context: Context) {
+        mapView.animate(toZoom: 15.0 + zoomValue)
     }
 }
