@@ -11,6 +11,7 @@
 		163F3495281FBE3B00AE2125 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163F3494281FBE3B00AE2125 /* ContentView.swift */; };
 		163F3497281FBE3D00AE2125 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163F3496281FBE3D00AE2125 /* Assets.xcassets */; };
 		163F349A281FBE3D00AE2125 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 163F3499281FBE3D00AE2125 /* Preview Assets.xcassets */; };
+		169EE272284DEEB800F5D28F /* ZoomButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169EE271284DEEB800F5D28F /* ZoomButtonType.swift */; };
 		16B60C6C28212B4C00E4048F /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B60C6B28212B4C00E4048F /* Environment.swift */; };
 		16FEFFEB281FCB0600B26837 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FEFFEA281FCB0600B26837 /* AppDelegate.swift */; };
 		16FEFFED281FD19700B26837 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FEFFEC281FD19700B26837 /* MapView.swift */; };
@@ -23,6 +24,7 @@
 		163F3494281FBE3B00AE2125 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		163F3496281FBE3D00AE2125 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		163F3499281FBE3D00AE2125 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		169EE271284DEEB800F5D28F /* ZoomButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomButtonType.swift; sourceTree = "<group>"; };
 		16B60C6B28212B4C00E4048F /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		16B60C6D282133BB00E4048F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		16FEFFEA281FCB0600B26837 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,13 +67,13 @@
 		163F3491281FBE3B00AE2125 /* GoogleMapDemo */ = {
 			isa = PBXGroup;
 			children = (
+				169EE273284DF1B000F5D28F /* views */,
+				169EE270284DEEA100F5D28F /* models */,
 				16B60C6D282133BB00E4048F /* Info.plist */,
 				16FEFFEA281FCB0600B26837 /* AppDelegate.swift */,
 				163F3496281FBE3D00AE2125 /* Assets.xcassets */,
-				163F3494281FBE3B00AE2125 /* ContentView.swift */,
 				16B60C6B28212B4C00E4048F /* Environment.swift */,
 				163F3492281FBE3B00AE2125 /* GoogleMapDemoApp.swift */,
-				16FEFFEC281FD19700B26837 /* MapView.swift */,
 				163F3498281FBE3D00AE2125 /* Preview Content */,
 			);
 			path = GoogleMapDemo;
@@ -83,6 +85,23 @@
 				163F3499281FBE3D00AE2125 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		169EE270284DEEA100F5D28F /* models */ = {
+			isa = PBXGroup;
+			children = (
+				169EE271284DEEB800F5D28F /* ZoomButtonType.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		169EE273284DF1B000F5D28F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				16FEFFEC281FD19700B26837 /* MapView.swift */,
+				163F3494281FBE3B00AE2125 /* ContentView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		61795914B49D829933C4A7AD /* Frameworks */ = {
@@ -234,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				169EE272284DEEB800F5D28F /* ZoomButtonType.swift in Sources */,
 				16FEFFEB281FCB0600B26837 /* AppDelegate.swift in Sources */,
 				16FEFFED281FD19700B26837 /* MapView.swift in Sources */,
 				163F3495281FBE3B00AE2125 /* ContentView.swift in Sources */,
