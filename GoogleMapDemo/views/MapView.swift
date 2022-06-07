@@ -2,7 +2,7 @@ import SwiftUI
 import GoogleMaps
 
 struct MapView: UIViewRepresentable {
-    final class Coordinator: NSObject, CLLocationManagerDelegate {
+    final class Coordinator: NSObject, CLLocationManagerDelegate, GMSMapViewDelegate {
         var parent: MapView
 
         init(mapView: MapView) {
@@ -19,18 +19,22 @@ struct MapView: UIViewRepresentable {
             parent.mapView.animate(to: camera)
             parent.locationManager.stopUpdatingLocation()
         }
+
+        func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        }
     }
 
     let mapView = GMSMapView(frame: .zero)
     @State var locationManager = CLLocationManager()
     @Binding var zoomValue: Float
 
-    func makeCoordinator() ->Coordinator {
+    func makeCoordinator() -> Coordinator {
         return Coordinator(mapView: self)
     }
 
     func makeUIView(context: Context) -> GMSMapView {
         mapView.isMyLocationEnabled = true
+        mapView.delegate = context.coordinator
         locationManager.delegate = context.coordinator
         locationManager.requestWhenInUseAuthorization()
         locationManager.distanceFilter = 50
