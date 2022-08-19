@@ -14,19 +14,16 @@ struct MapView: UIViewRepresentable {
             let camera = GMSCameraPosition.camera(
                 withLatitude: userLocation.coordinate.latitude,
                 longitude: userLocation.coordinate.longitude,
-                zoom: 15.0
+                zoom: parent.viewModel.defaultZoomValue
             )
             parent.mapView.animate(to: camera)
             parent.locationManager.stopUpdatingLocation()
         }
-
-        func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        }
     }
 
     let mapView = GMSMapView(frame: .zero)
+    @ObservedObject var viewModel: MapViewModel
     @State var locationManager = CLLocationManager()
-    @Binding var zoomValue: Float
 
     func makeCoordinator() -> Coordinator {
         return Coordinator(mapView: self)
@@ -43,6 +40,6 @@ struct MapView: UIViewRepresentable {
     }
 
     func updateUIView(_ mapView: GMSMapView, context: Context) {
-        mapView.animate(toZoom: 15.0 + zoomValue)
+        mapView.animate(toZoom: viewModel.toZoomValue)
     }
 }
